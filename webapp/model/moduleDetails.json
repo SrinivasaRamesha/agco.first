@@ -1,0 +1,15 @@
+{
+	"main": [{
+		"name": "Forecasting",
+		"icon": "sap-icon://vertical-waterfall-chart",
+		"key": "FC"
+	}, {
+		"name": "Budgeting(Savings)",
+		"icon": "sap-icon://loan",
+		"key": "BGS"
+	}, {
+		"name": "Budgeting(Non-Savings)",
+		"icon": "sap-icon://loan",
+		"key": "BGNS"
+	}]
+}

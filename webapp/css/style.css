@@ -1,0 +1,119 @@
+/* Enter your custom styles here */
+
+
+/* Enter your custom styles here*/
+
+
+/*Master page css*/
+
+.sideNavigationClass .sapTntSideNavigationVerticalScrolling {
+    background-color: #AE132A !important;
+}
+
+.sapContrast .sapTntNavLIItem {
+    background-color: #AE132A !important;
+}
+
+.sapContrast .sapTntNavLIGroup {
+    border-bottom: 0px solid #AE132A !important;
+}
+
+.listBackgroundColor {
+    background-color: #AE132A !important;
+}
+
+.sapContrast.sapTntToolHeader.sapMTB {
+    background-color: white !important;
+    border: 1px solid white !important;
+}
+
+#userNameId {
+    color: black;
+}
+
+
+/*download to excel button*/
+
+.downloadButtonClass .sapMBtnInner {
+    background-color: #AE132A !important;
+    border-radius: 0.5rem;
+    color: #ffffff;
+}
+
+.sapMBtnIcon {
+    color: #ffffff !important;
+}
+
+
+/*profile icon css*/
+
+.appHdr-Icon {
+    margin-right: 0.5rem;
+    font-size: xx-large;
+    color: #458aca;
+    text-shadow: none;
+}
+
+
+/*for collapsing button*/
+
+.sapContrast .sapMBtnIcon {
+    background-color: #ffffff;
+    color: #AE132A !important;
+    /* text-shadow: 0 0 0.125rem #000000; */
+}
+
+
+/*font style*/
+
+.fontStyleClass {
+    font: Eurostile LT STD Bold Extended 2;
+}
+
+.sapMLabel .headerText {
+    color: #AE132A !important;
+    font-size: 0.875rem;
+    font-family: Eurostile LT STD Bold Extended 2;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+
+
+/*for the title bar*/
+
+
+/*sapMBar {*/
+
+
+/*    display: block;*/
+
+
+/*    width: 100%;*/
+
+
+/*    position: relative;*/
+
+
+/*    height: 3rem;*/
+
+
+/*    line-height: 3rem;*/
+
+
+/*    color: #666666;*/
+
+
+/*    background-color: #eff4f9;*/
+
+
+/*    text-shadow: 0 0 0.125rem #ffffff;*/
+
+
+/*    box-shadow: inset 0 -0.0625rem #ffffff;*/
+
+
+/*}*/

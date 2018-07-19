@@ -1,0 +1,163 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:com="sap.ui.commons" xmlns:tnt="sap.tnt"
+	xmlns:uni="sap.ui.unified" xmlns:uitable="sap.ui.table" controllerName="incture.forecast.forecasting.controller.Forecast"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<tnt:ToolPage id="toolPage" class="sideNavigationClass">
+				<tnt:header>
+					<tnt:ToolHeader>
+						<Image src="images/download.png" width="180px" height="100px"/>
+						<Button icon="sap-icon://menu2" id="toggleButtonId" press="onSideNavButtonPress"/>
+						<Label text="" id="pageHeadingId"/>
+						<ToolbarSpacer/>
+						<Label text="User Name" id="userNameId"/>
+						<core:Icon src="sap-icon://customer" press="onProfile" class="appHdr-Icon"/>
+					</tnt:ToolHeader>
+				</tnt:header>
+				<tnt:sideContent>
+					<tnt:SideNavigation expanded="true" itemSelect="onItemSelect">
+						<tnt:NavigationList items="{path: 'modules>/main'}" class="listBackgroundColor">
+							<tnt:NavigationListItem text="{modules>name}" icon="{modules>icon}" enabled="true" key="{modules>key}" hasExpander="false" expanded="false"></tnt:NavigationListItem>
+						</tnt:NavigationList>
+					</tnt:SideNavigation>
+				</tnt:sideContent>
+				<tnt:mainContents>
+					<NavContainer id="pageContainer">
+						<pages>
+							<ScrollContainer id="FC" horizontal="false" vertical="false" height="100%">
+								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="ForecastTableId" visibleRowCount="10">
+									<uitable:extension>
+										<Bar class="barHeader">
+											<contentLeft>
+												<SearchField search="filterTableLevel"/>
+											</contentLeft>
+											<contentRight>
+												<Button icon="sap-icon://arrow-bottom" text="Download to Excel" iconFirst="true" press="onDataExport" class="downloadButtonClass"/>
+											</contentRight>
+										</Bar>
+									</uitable:extension>
+									<uitable:columns>
+										<uitable:Column width="11em" resizable="false" filterProperty="Factory" filtered="true" sortProperty="Factory" sorted="true"
+											columnMenuOpen="onColPress">
+											<Label text="{i18n>factoryColName}"/>
+											<!--<Label text="{i18n>CNFA}"/>-->
+											<uitable:template>
+												<Text text="{forecastModel>Factory}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="ParentNumber">
+											<Label text="{i18n>parentNumberColName}"/>
+											<uitable:template>
+												<Text text="{forecastModel>ParentNumber}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="VendorNumber">
+											<Label text="{i18n>vendorNumberColName}"/>
+											<uitable:template>
+												<Link text="{forecastModel>VendorNumber}" press="onVendorLinkPress"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" filterProperty="VendorName" filtered="true" sorted="true" sortProperty="VendorName">
+											<Label text="{i18n>vendorNameColName}"/>
+											<uitable:template>
+												<Text text="{forecastModel>VendorName}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="CurrentQuote">
+											<Label text="{i18n>currentQuoteColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{parts:['forecastModel>CurrentQuote','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>CurrentQuote', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" sorted="true" sortProperty="TotalStandard">
+											<Label text="{i18n>totalStandardColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalStandard','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalStandard', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="TotalPPVBudget">
+											<Label text="{i18n>totalBudgetColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalPPVBudget','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalPPVBudget', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="TotalPPVForecast">
+											<Label text="{i18n>totalForecastColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalPPVForecast','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalPPVForecast', formatter:'.formatter.currencyState'}"/>
+												<!--<uni:Currency value="{forecastModel>TotalPPVForecast}" currency="{forecastModel>currencyCode}" useSymbol="true"/>-->
+											</uitable:template>
+										</uitable:Column>
+									</uitable:columns>
+								</uitable:Table>
+								<com:Paginator page="onPageSelection" id="forecastPaginator"></com:Paginator>
+								<!--			<Table id="ForecastTableId" items="{/Forecasting}" visible="false" growing="true" growingThreshold="8" mode="SingleSelectMaster" selectionChange="onSelectionChange">-->
+								<!--	<headerToolbar>-->
+								<!--		<Toolbar>-->
+								<!--			<content>-->
+								<!--				<SearchField width="40%"/>-->
+								<!--				<ToolbarSpacer/>-->
+								<!--				<Button icon="sap-icon://arrow-bottom" text="Download to Excel" iconFirst="true" press="onDataExport"/>-->
+								<!--			</content>-->
+								<!--		</Toolbar>-->
+								<!--	</headerToolbar>-->
+								<!--	<columns>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNFA}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNPN}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNVN}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNVNA}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNCQ}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNTS}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNPPVBU}"/>-->
+								<!--		</Column>-->
+								<!--		<Column>-->
+								<!--			<Label text="{i18n>CNPPVFO}"/>-->
+								<!--		</Column>-->
+								<!--	</columns>-->
+								<!--	<items>-->
+								<!--		<ColumnListItem>-->
+								<!--			<cells>-->
+								<!--				<Text text="{Factory}"/>-->
+								<!--				<Text text="{ParentNumber}"/>-->
+								<!--				<Text text="{VendorNumber}"/>-->
+								<!--				<Text text="{VendorName}"/>-->
+								<!--				<Text text="{CurrentQuote}"/>-->
+								<!--				<Text text="{TotalStandard}"/>-->
+								<!--				<Text text="{TotalPPVBudget}"/>-->
+								<!--				<Text text="{TotalPPVForecast}"/>-->
+								<!--			</cells>-->
+								<!--		</ColumnListItem>-->
+								<!--	</items>-->
+								<!--</Table>-->
+							</ScrollContainer>
+							<ScrollContainer id="BGS" horizontal="false" vertical="true" height="100%">
+								<Text text="This is Budgeting savings Screen"/>
+							</ScrollContainer>
+							<ScrollContainer id="BGNS" horizontal="false" vertical="true" height="100%">
+								<Text text="This budgeting non-savings"/>
+								<uitable:Table id="BudgetNonSavingsId"></uitable:Table>
+							</ScrollContainer>
+						</pages>
+					</NavContainer>
+				</tnt:mainContents>
+			</tnt:ToolPage>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="incture.forecast.forecasting.controller.detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" press="onBackPress"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<Panel expanded="true" headerText="Vendor Forecast"></Panel>
+			<Panel headerText="Parts Forecast" expandable="true" expanded="false"></Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="back" press="onBackPress"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,203 @@
+{
+	"Forecasting": [{
+		"Factory": "GSI",
+		"ParentNumber": "105714",
+		"VendorNumber": "100250",
+		"VendorName": "BALDOR",
+		"CurrentQuote": "3.2365",
+		"TotalStandard": "11,454,648",
+		"TotalPPVBudget": "188,780",
+		"TotalPPVForecast": "159,617",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Jackson",
+		"ParentNumber": "756666",
+		"VendorNumber": "100560",
+		"VendorName": "FARGO ASSEMBLY",
+		"CurrentQuote": "0.4180",
+		"TotalStandard": "6,344,689",
+		"TotalPPVBudget": "82,584",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "10086",
+		"VendorNumber": "100780",
+		"VendorName": "LMC INDUSTRIES",
+		"CurrentQuote": "0.0000",
+		"TotalStandard": "4,868,437",
+		"TotalPPVBudget": "117,311",
+		"TotalPPVForecast": "90,040",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "10506",
+		"VendorNumber": "100500",
+		"VendorName": "TEXNOR",
+		"CurrentQuote": "1.6899",
+		"TotalStandard": "3,972,266",
+		"TotalPPVBudget": "67,757",
+		"TotalPPVForecast": "69,243",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "105714",
+		"VendorNumber": "100400",
+		"VendorName": "FORTE",
+		"CurrentQuote": "6.1789",
+		"TotalStandard": "3,840,547",
+		"TotalPPVBudget": "0",
+		"TotalPPVForecast": "-20,580",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "105654",
+		"VendorNumber": "100200",
+		"VendorName": "NIDEC",
+		"CurrentQuote": "2.5878",
+		"TotalStandard": "3,549,318",
+		"TotalPPVBudget": "43,757",
+		"TotalPPVForecast": "88,712",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "106214",
+		"VendorNumber": "100120",
+		"VendorName": "DETROIT",
+		"CurrentQuote": "0.0000",
+		"TotalStandard": "2,927,951",
+		"TotalPPVBudget": "60,537",
+		"TotalPPVForecast": "57,900",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Healton",
+		"ParentNumber": "164918",
+		"VendorNumber": "100300",
+		"VendorName": "REGART",
+		"CurrentQuote": "1.6896",
+		"TotalStandard": "2,740,818",
+		"TotalPPVBudget": "50,135",
+		"TotalPPVForecast": "90,040",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "153817",
+		"VendorNumber": "100234",
+		"VendorName": "WELBORT",
+		"CurrentQuote": "0.5983",
+		"TotalStandard": "2,436,678",
+		"TotalPPVBudget": "15,732",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Jackson",
+		"ParentNumber": "123335",
+		"VendorNumber": "101267",
+		"VendorName": "TEXNOR",
+		"CurrentQuote": "0.2843",
+		"TotalStandard": "11,454,648",
+		"TotalPPVBudget": "53,307",
+		"TotalPPVForecast": "159,617",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "675893",
+		"VendorNumber": "108750",
+		"VendorName": "REGART",
+		"CurrentQuote": "1.2673",
+		"TotalStandard": "3,972,266",
+		"TotalPPVBudget": "60,537",
+		"TotalPPVForecast": "-20,580",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "275038",
+		"VendorNumber": "100210",
+		"VendorName": "NIDEC",
+		"CurrentQuote": "0.9843",
+		"TotalStandard": "11,454,648",
+		"TotalPPVBudget": "67,757",
+		"TotalPPVForecast": "69,243",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "324567",
+		"VendorNumber": "100243",
+		"VendorName": "BALDOR",
+		"CurrentQuote": "2.8356",
+		"TotalStandard": "3,972,266",
+		"TotalPPVBudget": "82,584",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "GSI",
+		"ParentNumber": "234562",
+		"VendorNumber": "100112",
+		"VendorName": "BALDOR",
+		"CurrentQuote": "3.2763",
+		"TotalStandard": "11,454,648",
+		"TotalPPVBudget": "117,311",
+		"TotalPPVForecast": "159,167",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Jackson",
+		"ParentNumber": "756666",
+		"VendorNumber": "100560",
+		"VendorName": "FARGO ASSEMBLY",
+		"CurrentQuote": "0.4180",
+		"TotalStandard": "6,344,689",
+		"TotalPPVBudget": "82,584",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Jackson",
+		"ParentNumber": "756666",
+		"VendorNumber": "100560",
+		"VendorName": "FARGO ASSEMBLY",
+		"CurrentQuote": "0.4180",
+		"TotalStandard": "6,344,689",
+		"TotalPPVBudget": "82,584",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Healton",
+		"ParentNumber": "164918",
+		"VendorNumber": "100300",
+		"VendorName": "REGART",
+		"CurrentQuote": "1.6896",
+		"TotalStandard": "2,740,818",
+		"TotalPPVBudget": "50,135",
+		"TotalPPVForecast": "90,040",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Healton",
+		"ParentNumber": "164918",
+		"VendorNumber": "100300",
+		"VendorName": "REGART",
+		"CurrentQuote": "1.6896",
+		"TotalStandard": "2,740,818",
+		"TotalPPVBudget": "50,135",
+		"TotalPPVForecast": "90,040",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Healton",
+		"ParentNumber": "164918",
+		"VendorNumber": "100300",
+		"VendorName": "REGART",
+		"CurrentQuote": "1.6896",
+		"TotalStandard": "2,740,818",
+		"TotalPPVBudget": "50,135",
+		"TotalPPVForecast": "90,040",
+		"currencyCode":"USD"
+	}, {
+		"Factory": "Jackson",
+		"ParentNumber": "756666",
+		"VendorNumber": "100560",
+		"VendorName": "FARGO ASSEMBLY",
+		"CurrentQuote": "0.4180",
+		"TotalStandard": "6,344,689",
+		"TotalPPVBudget": "82,584",
+		"TotalPPVForecast": "49,161",
+		"currencyCode":"USD"
+	}]
+}

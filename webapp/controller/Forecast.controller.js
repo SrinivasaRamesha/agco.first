@@ -1,15 +1,15 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"incture/forecast/forecasting/controller/baseController",
 	"sap/ui/core/util/Export",
 	"sap/ui/core/util/ExportTypeCSV",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"incture/forecast/forecasting/formatter/formatter"
-], function (Controller, Export, ExportTypeCSV, JSONModel, Filter, FilterOperator, formatter) {
+], function (baseController, Export, ExportTypeCSV, JSONModel, Filter, FilterOperator, formatter) {
 	"use strict";
 
-	return Controller.extend("incture.forecast.forecasting.controller.Forecast", {
+	return baseController.extend("incture.forecast.forecasting.controller.Forecast", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.

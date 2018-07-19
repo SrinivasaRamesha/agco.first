@@ -1,9 +1,10 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"incture/forecast/forecasting/controller/baseController",
+	"sap/ui/model/json/JSONModel"
+], function (baseController, JSONModel) {
 	"use strict";
 
-	return Controller.extend("incture.forecast.forecasting.controller.detail", {
+	return baseController.extend("incture.forecast.forecasting.controller.detail", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -11,9 +12,19 @@ sap.ui.define([
 		 * @memberOf incture.forecast.forecasting.view.detail
 		 */
 		onInit: function () {
-			this.getOwnerComponent().getRouter().getRoute("detail").attachPatternMatched(function (oEvent) {
+			// this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
+			// this.getOwnerComponent().getRouter().getRoute("detail").attachPatternMatched(function (oEvent) {
+			// 	var vendorNum = oEvent.getParameter("arguments").vendornumber;
+			// 	var sFinalPath = "vendorModel>/VendorNumber/" + vendorNum;
+			// });
+			var oMod = new JSONModel();
+			oMod.loadData("model/vendorEmpty.json");
+			this.getView().setModel(oMod, "vendorSampleData");
+			this.getRouter().getRoute("detail").attachPatternMatched(function (oEvent) {
 				var vendorNum = oEvent.getParameter("arguments").vendornumber;
+
 			});
+
 		},
 		onBackPress: function () {
 			this.getOwnerComponent().getRouter().navTo("RouteMain");

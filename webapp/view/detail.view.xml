@@ -1,14 +1,348 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="incture.forecast.forecasting.controller.detail"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page showHeader="false">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout"
+	controllerName="incture.forecast.forecasting.controller.detail" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:lay="sap.ui.layout.form">
+	<Page showHeader="true">
 		<customHeader>
 			<Toolbar>
-				<Button icon="sap-icon://nav-back" press="onBackPress"/>
+				<Button icon="sap-icon://nav-back" press="onBackPress" tooltip="Navigate to previous screen"/>
+				<Label text="Vendor Number"/>
+				<Text text="100500"/>
+				<Label text="Vendor Name"/><Text text="GSI"/><Label text="Date"/><Text text="07/08/2018"/>
 			</Toolbar>
 		</customHeader>
 		<content>
-			<Panel expanded="true" headerText="Vendor Forecast"></Panel>
-			<Panel headerText="Parts Forecast" expandable="true" expanded="false"></Panel>
+			<Panel expanded="true" headerText="Vendor Forecast">
+				<content>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em"/>
+							<Label text="January" width="7em"/>
+							<Label text="February" width="6em"/>
+							<Label text="March" width="7em"/>
+							<Label text="April" width="7em"/>
+							<Label text="May" width="7em"/>
+							<Label text="June" width="7em"/>
+							<Label text="July" width="7em"/>
+							<Label text="August" width="7em"/>
+							<Label text="September" width="7em"/>
+							<Label text="October" width="7em"/>
+							<Label text="November" width="7em"/>
+							<Label text="December" width="7em"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="Spend $"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="PPV Forecast"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="Spend $"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="Economics Non-Contractual"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="Economics Contractual"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="Non-Purchasing PPV"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="PPV Forecast $"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="PPV Budget %"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<FlexBox fitContainer="true">
+						<items>
+							<Label width="14em" text="PPV Budget $"/>
+							<Input value="123" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+							<Input value="432" width="6em" editable="false"/>
+						</items>
+					</FlexBox>
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0" defaultIndent="l0 m1 s1">-->
+					<!--	<l:content>-->
+					<!--		<Label/>-->
+					<!--		<Label text="January"/>-->
+					<!--		<Label text="February"/>-->
+					<!--		<Label text="March"/>-->
+					<!--		<Label text="April"/>-->
+					<!--		<Label text="May"/><Label text="June"/>-->
+					<!--		<Label text="July"/>-->
+					<!--		<Label text="August"/>-->
+					<!--		<Label text="September"/>-->
+					<!--		<Label text="October"/>-->
+					<!--		<Label text="November"/>-->
+					<!--		<Label text="December"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Jan}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Feb}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Mar}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/April}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/May}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Jun}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/July}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Aug}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Sep}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Oct}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Nov}"/>-->
+					<!--		<Label text="{vendorSampleData>/spend/Dec}"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+					<!--<l:Grid defaultSpan="L1 M1 S1" hSpacing="0.5" vSpacing="0.5">-->
+					<!--	<l:content>-->
+					<!--		<Label text="Spend$"/>-->
+					<!--		<Label text="10000"/>-->
+					<!--		<Label text="3252345"/>-->
+					<!--		<Label text="52345"/>-->
+					<!--		<Label text="2355"/>-->
+					<!--		<Label text="54"/><Label text="4325"/>-->
+					<!--		<Label text="52435"/>-->
+					<!--		<Label text="245634"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="76533"/>-->
+					<!--		<Label text="2345"/>-->
+					<!--		<Label text="345"/>-->
+					<!--	</l:content>-->
+					<!--</l:Grid>-->
+				</content>
+			</Panel>
+			<Panel expandable="true" expanded="false" headerText="Parts Forecast" width="auto" class="sapUiResponsiveMargin">
+				<content>
+					<tnt:ToolPage>
+						<tnt:sideContent>
+							<tnt:SideNavigation expanded="true">
+								<tnt:NavigationList class="listBackgroundColor">
+									<tnt:NavigationListItem text="Part1" icon="sap-icon://save" enabled="true" key="part1" hasExpander="false" expanded="false"></tnt:NavigationListItem>
+									<tnt:NavigationListItem text="Part2" icon="sap-icon://save" enabled="true" key="part2" hasExpander="false" expanded="false"></tnt:NavigationListItem>
+								</tnt:NavigationList>
+							</tnt:SideNavigation>
+						</tnt:sideContent>
+					</tnt:ToolPage>
+				</content>
+			</Panel>
 		</content>
 		<footer>
 			<Bar>

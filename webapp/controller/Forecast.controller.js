@@ -24,8 +24,11 @@ sap.ui.define([
 		},
 		onVendorLinkPress: function (oEvent) {
 			var oVenNum = oEvent.getSource().getProperty("text");
+			var mainPath = oEvent.getSource().getBindingInfo("text").binding.getContext().getPath();
+			var oVenName = this.getView().getModel("forecastModel").getProperty(mainPath).VendorName;
 			this.getOwnerComponent().getRouter().navTo("detail", {
-				vendornumber: oVenNum
+				vendornumber: oVenNum,
+				vendorname: oVenName
 			});
 		},
 		initSampleDataModel: function () {

@@ -1,7 +1,7 @@
 sap.ui.define([
 	"incture/forecast/forecasting/controller/baseController",
 	"sap/ui/model/json/JSONModel"
-], function (baseController, JSONModel) {
+], function (baseController, JSONModel, smartfield) {
 	"use strict";
 
 	return baseController.extend("incture.forecast.forecasting.controller.detail", {
@@ -20,14 +20,75 @@ sap.ui.define([
 			var oMod = new JSONModel();
 			oMod.loadData("model/vendorEmpty.json");
 			this.getView().setModel(oMod, "vendorSampleData");
-			this.getRouter().getRoute("detail").attachPatternMatched(function (oEvent) {
-				var vendorNum = oEvent.getParameter("arguments").vendornumber;
-
-			});
+			this.getRouter().getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 
 		},
 		onBackPress: function () {
 			this.getOwnerComponent().getRouter().navTo("RouteMain");
+		},
+		_onObjectMatched: function (oEvent) {
+			var vendorNum = oEvent.getParameter("arguments").vendornumber;
+			var vendorName = oEvent.getParameter("arguments").vendorname;
+			this.getView().byId("vendorPageNumId").setText(vendorNum);
+			this.getView().byId("vendorPageNameId").setText(vendorName);
+			var oFinalPath = "vendorModel>/" + vendorNum;
+			var oTemplate = new sap.m.ColumnListItem({
+				cells: [new sap.m.Text({
+						text: "{vendorModel>name}"
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Jan}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Feb}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Mar}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>April}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>May}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Jun}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>July}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Aug}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Sep}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Oct}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Nov}",
+						editable: false
+					}),
+					new sap.m.Input({
+						value: "{vendorModel>Dec}",
+						editable: false
+					})
+				]
+			});
+			var oVendorTab = this.getView().byId("vendorLevelTabId");
+			oVendorTab.bindItems(oFinalPath, oTemplate);
+
 		}
 
 		/**

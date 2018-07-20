@@ -85,18 +85,88 @@
 					</Table>
 				</content>
 			</Panel>
-			<Panel expandable="true" expanded="false" headerText="Parts Forecast" width="auto" class="sapUiResponsiveMargin">
+			<Panel expandable="true" expanded="false" headerText="Parts Forecast" class="sapUiResponsiveMargin">
 				<content>
-					<tnt:ToolPage>
-						<tnt:sideContent>
-							<tnt:SideNavigation expanded="true">
-								<tnt:NavigationList class="listBackgroundColor">
-									<tnt:NavigationListItem text="Part1" icon="sap-icon://save" enabled="true" key="part1" hasExpander="false" expanded="false"></tnt:NavigationListItem>
-									<tnt:NavigationListItem text="Part2" icon="sap-icon://save" enabled="true" key="part2" hasExpander="false" expanded="false"></tnt:NavigationListItem>
-								</tnt:NavigationList>
-							</tnt:SideNavigation>
-						</tnt:sideContent>
-					</tnt:ToolPage>
+					<FlexBox>
+						<List items="{partsModel>/100250}">
+							<headerToolbar>
+								<Toolbar>
+									<Label text="Parts"/>
+								</Toolbar>
+							</headerToolbar>
+							<DisplayListItem type="Navigation" highlight="Information" label="{partsModel>parts}" value="{partsModel>partName}"></DisplayListItem>
+						</List>
+						<Table headerText="Forecast" id="vendorLevelTabIdSec">
+							<columns>
+								<Column>
+									<header>
+										<Label/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="January"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="February"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="March"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="April"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="May"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="June"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="July"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="August"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="September"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="October"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="November"/>
+									</header>
+								</Column>
+								<Column>
+									<header>
+										<Label text="December"/>
+									</header>
+								</Column>
+							</columns>
+							<dependents></dependents>
+						</Table>
+					</FlexBox>
 				</content>
 			</Panel>
 		</content>

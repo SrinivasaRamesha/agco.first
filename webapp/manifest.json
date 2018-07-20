@@ -10,8 +10,12 @@
 				"uri": "model/moduleDetails.json",
 				"type": "JSON"
 			},
-			"init_vendor_data":{
-				"uri":"model/vendorData.json",
+			"init_vendor_data": {
+				"uri": "model/vendorData.json",
+				"type": "JSON"
+			},
+			"init_parts_data":{
+				"uri":"model/partsData.json",
 				"type":"JSON"
 			}
 		},
@@ -72,20 +76,25 @@
 					"bundleName": "incture.forecast.forecasting.i18n.i18n"
 				}
 			},
-			"vendorModel":{
-				"type":"sap.ui.model.json.JSONModel",
-				"dataSource":"init_vendor_data"
+			"vendorModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "init_vendor_data"
 			},
-
 			"modules": {
 				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "init_module_data"
+			},
+			"partsModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "init_parts_data"
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -97,19 +106,22 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteMain",
-				"pattern": "",
-				"target": [
-					"TargetMain"
-				]
-			}, {
-				"name": "detail",
-				"pattern": "detail/{vendornumber},{vendorname}",
-				"target": [
-					"detail"
-				]
-			}],
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "",
+					"target": [
+						"TargetMain"
+					]
+				},
+				{
+					"name": "detail",
+					"pattern": "detail/{vendornumber},{vendorname}",
+					"target": [
+						"detail"
+					]
+				}
+			],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",

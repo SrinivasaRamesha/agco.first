@@ -17,9 +17,6 @@ sap.ui.define([
 			// 	var vendorNum = oEvent.getParameter("arguments").vendornumber;
 			// 	var sFinalPath = "vendorModel>/VendorNumber/" + vendorNum;
 			// });
-			var oMod = new JSONModel();
-			oMod.loadData("model/vendorEmpty.json");
-			this.getView().setModel(oMod, "vendorSampleData");
 			this.getRouter().getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 
 		},
@@ -87,7 +84,9 @@ sap.ui.define([
 				]
 			});
 			var oVendorTab = this.getView().byId("vendorLevelTabId");
+			var oVendorTab2 = this.getView().byId("vendorLevelTabIdSec");
 			oVendorTab.bindItems(oFinalPath, oTemplate);
+			oVendorTab2.bindItems(oFinalPath, oTemplate);
 
 		}
 

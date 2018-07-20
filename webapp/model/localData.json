@@ -8,7 +8,7 @@
 		"TotalStandard": "11,454,648",
 		"TotalPPVBudget": "188,780",
 		"TotalPPVForecast": "159,617",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Jackson",
 		"ParentNumber": "756666",
@@ -18,7 +18,7 @@
 		"TotalStandard": "6,344,689",
 		"TotalPPVBudget": "82,584",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "10086",
@@ -28,7 +28,7 @@
 		"TotalStandard": "4,868,437",
 		"TotalPPVBudget": "117,311",
 		"TotalPPVForecast": "90,040",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "10506",
@@ -38,7 +38,7 @@
 		"TotalStandard": "3,972,266",
 		"TotalPPVBudget": "67,757",
 		"TotalPPVForecast": "69,243",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "105714",
@@ -48,7 +48,7 @@
 		"TotalStandard": "3,840,547",
 		"TotalPPVBudget": "0",
 		"TotalPPVForecast": "-20,580",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "105654",
@@ -58,7 +58,7 @@
 		"TotalStandard": "3,549,318",
 		"TotalPPVBudget": "43,757",
 		"TotalPPVForecast": "88,712",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "106214",
@@ -68,7 +68,7 @@
 		"TotalStandard": "2,927,951",
 		"TotalPPVBudget": "60,537",
 		"TotalPPVForecast": "57,900",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Healton",
 		"ParentNumber": "164918",
@@ -78,7 +78,7 @@
 		"TotalStandard": "2,740,818",
 		"TotalPPVBudget": "50,135",
 		"TotalPPVForecast": "90,040",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "153817",
@@ -88,7 +88,7 @@
 		"TotalStandard": "2,436,678",
 		"TotalPPVBudget": "15,732",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Jackson",
 		"ParentNumber": "123335",
@@ -98,7 +98,7 @@
 		"TotalStandard": "11,454,648",
 		"TotalPPVBudget": "53,307",
 		"TotalPPVForecast": "159,617",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "675893",
@@ -108,7 +108,7 @@
 		"TotalStandard": "3,972,266",
 		"TotalPPVBudget": "60,537",
 		"TotalPPVForecast": "-20,580",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "275038",
@@ -118,7 +118,7 @@
 		"TotalStandard": "11,454,648",
 		"TotalPPVBudget": "67,757",
 		"TotalPPVForecast": "69,243",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "324567",
@@ -128,7 +128,7 @@
 		"TotalStandard": "3,972,266",
 		"TotalPPVBudget": "82,584",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "GSI",
 		"ParentNumber": "234562",
@@ -138,7 +138,7 @@
 		"TotalStandard": "11,454,648",
 		"TotalPPVBudget": "117,311",
 		"TotalPPVForecast": "159,167",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Jackson",
 		"ParentNumber": "756666",
@@ -148,7 +148,7 @@
 		"TotalStandard": "6,344,689",
 		"TotalPPVBudget": "82,584",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Jackson",
 		"ParentNumber": "756666",
@@ -158,7 +158,7 @@
 		"TotalStandard": "6,344,689",
 		"TotalPPVBudget": "82,584",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Healton",
 		"ParentNumber": "164918",
@@ -168,7 +168,7 @@
 		"TotalStandard": "2,740,818",
 		"TotalPPVBudget": "50,135",
 		"TotalPPVForecast": "90,040",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Healton",
 		"ParentNumber": "164918",
@@ -178,7 +178,7 @@
 		"TotalStandard": "2,740,818",
 		"TotalPPVBudget": "50,135",
 		"TotalPPVForecast": "90,040",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Healton",
 		"ParentNumber": "164918",
@@ -188,7 +188,7 @@
 		"TotalStandard": "2,740,818",
 		"TotalPPVBudget": "50,135",
 		"TotalPPVForecast": "90,040",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
 	}, {
 		"Factory": "Jackson",
 		"ParentNumber": "756666",
@@ -198,6 +198,64 @@
 		"TotalStandard": "6,344,689",
 		"TotalPPVBudget": "82,584",
 		"TotalPPVForecast": "49,161",
-		"currencyCode":"USD"
+		"currencyCode": "USD"
+	}],
+	"BNonSavings": [{
+
+	}],
+	"BSavings": [{
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
+	}, {
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
+	}, {
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
+	}, {
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
+	}, {
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
+	}, {
+		"factory": "GSI",
+		"commDirectory": "105714",
+		"stdSpend": "100250",
+		"projects%": "BALDOR",
+		"projects": "3.2365",
+		"tasks%": "11454648",
+		"tasks": "188780",
+		"totalSavings": "159617"
 	}]
 }

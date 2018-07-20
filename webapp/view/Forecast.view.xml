@@ -25,7 +25,7 @@
 					<NavContainer id="pageContainer">
 						<pages>
 							<ScrollContainer id="FC" horizontal="false" vertical="false" height="100%">
-								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="ForecastTableId" visibleRowCount="10">
+								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="true" id="ForecastTableId" visibleRowCount="10">
 									<uitable:extension>
 										<Bar class="barHeader">
 											<contentLeft>
@@ -147,12 +147,236 @@
 								<!--	</items>-->
 								<!--</Table>-->
 							</ScrollContainer>
-							<ScrollContainer id="BGS" horizontal="false" vertical="true" height="100%">
-								<Text text="This is Budgeting savings Screen"/>
-							</ScrollContainer>
 							<ScrollContainer id="BGNS" horizontal="false" vertical="true" height="100%">
-								<Text text="This budgeting non-savings"/>
-								<uitable:Table id="BudgetNonSavingsId"></uitable:Table>
+								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="NonSavingsTableId" visibleRowCount="10">
+									<uitable:extension>
+										<Bar class="barHeader">
+											<contentLeft>
+												<SearchField search="filterTableLevel"/>
+											</contentLeft>
+											<contentRight>
+												<Button icon="sap-icon://arrow-bottom" text="Download to Excel" iconFirst="true" press="onDataExport" class="downloadButtonClass"/>
+											</contentRight>
+										</Bar>
+									</uitable:extension>
+									<uitable:columns>
+										<uitable:Column width="11em" resizable="false" filterProperty="Factory" filtered="true" sortProperty="Factory" sorted="true"
+											columnMenuOpen="onColPress">
+											<Label text="{i18n>factoryColName}"/>
+											<!--<Label text="{i18n>CNFA}"/>-->
+											<uitable:template>
+												<Text text="{forecastModel>Factory}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="ParentNumber">
+											<Label text="{i18n>parentNumberColName}"/>
+											<uitable:template>
+												<Text text="{forecastModel>ParentNumber}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="VendorNumber">
+											<Label text="{i18n>vendorNumberColName}"/>
+											<uitable:template>
+												<Link text="{forecastModel>VendorNumber}" press="vendorToNonSavings"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" filterProperty="VendorName" filtered="true" sorted="true" sortProperty="VendorName">
+											<Label text="{i18n>vendorNameColName}"/>
+											<uitable:template>
+												<Text text="{forecastModel>VendorName}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="CurrentQuote">
+											<Label text="{i18n>currentQuoteColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{parts:['forecastModel>CurrentQuote','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>CurrentQuote', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" sorted="true" sortProperty="TotalStandard">
+											<Label text="{i18n>totalStandardColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalStandard','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalStandard', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="TotalPPVBudget">
+											<Label text="{i18n>totalBudgetColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalPPVBudget','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalPPVBudget', formatter:'.formatter.currencyState'}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false" sorted="true" sortProperty="TotalPPVForecast">
+											<Label text="{i18n>totalForecastColName}"/>
+											<uitable:template>
+												<ObjectStatus text="{ parts:['forecastModel>TotalPPVForecast','forecastModel>currencyCode'], formatter:'.formatter.formatCurrency'}"
+													state="{path:'forecastModel>TotalPPVForecast', formatter:'.formatter.currencyState'}"/>
+												<!--<uni:Currency value="{forecastModel>TotalPPVForecast}" currency="{forecastModel>currencyCode}" useSymbol="true"/>-->
+											</uitable:template>
+										</uitable:Column>
+									</uitable:columns>
+								</uitable:Table>
+								<com:Paginator page="onPageSelectionNonSavings" id="budgNonSavingsPaginator"></com:Paginator>
+							</ScrollContainer>
+							<ScrollContainer id="BGS" horizontal="false" vertical="true" height="100%">
+								<uitable:Table rows="{/BSavings}" selectionMode="Single" rowSelectionChange="onSavingsRow" selectionBehavior="Row" visibleRowCount="6"
+									class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false" id="SavingsTableId">
+									<uitable:extension>
+										<Bar class="barHeader">
+											<contentLeft>
+												<SearchField/>
+											</contentLeft>
+											<contentRight>
+												<Button icon="sap-icon://arrow-bottom" text="Download to Excel" class="downloadButtonClass" iconFirst="true" press="onDataExport"/>
+											</contentRight>
+										</Bar>
+									</uitable:extension>
+									<uitable:columns>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>factory}"/>
+											<uitable:template>
+												<Text text="{factory}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>commDirectory}"/>
+											<uitable:template>
+												<Text text="{commDirectory}"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>stdSpend}"/>
+											<uitable:template>
+												<Text text="{stdSpend}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>projects%}"/>
+											<uitable:template>
+												<Text text="{projects%}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>projects}"/>
+											<uitable:template>
+												<Text text="{projects}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em">
+											<Label text="{i18n>tasks%}"/>
+											<uitable:template>
+												<Text text="{tasks%}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>tasks}"/>
+											<uitable:template>
+												<Text text="{tasks}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+										<uitable:Column width="11em" resizable="false">
+											<Label text="{i18n>totalSavings}"/>
+											<uitable:template>
+												<Text text="{totalSavings}" maxLines="1"/>
+											</uitable:template>
+										</uitable:Column>
+									</uitable:columns>
+								</uitable:Table>
+								<!--Budgeting savings 2nd screen-->
+								<ScrollContainer id="SecondSavingsTableId">
+									<SegmentedButton id="item" selectionChange="onSavingsSegButton" class="downloadButtonClass">
+										<items>
+											<SegmentedButtonItem text="2018" class="downloadButtonClass" id="seg2018Savings"/>
+											<SegmentedButtonItem text="2019" class="downloadButtonClass" id="seg2019Savings"/>
+										</items>
+									</SegmentedButton>
+									<uitable:Table rows="{oSegmentModel>/BSavings}" selectionMode="Single" rowSelectionChange="onItemsSelectionChange" visibleRowCount="3"
+										class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate">
+										<uitable:extension>
+											<Bar class="barHeader">
+												<contentLeft></contentLeft>
+												<contentRight>
+													<Button icon="sap-icon://arrow-bottom" text="Download to Excel" class="downloadButtonClass" iconFirst="true" press="onDataExport"/>
+												</contentRight>
+											</Bar>
+										</uitable:extension>
+										<uitable:columns>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>January}"/>
+												<uitable:template>
+													<Text text="{factory}"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>February}"/>
+												<uitable:template>
+													<Text text="{commDirectory}"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>March}"/>
+												<uitable:template>
+													<Text text="{stdSpend}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>April}"/>
+												<uitable:template>
+													<Text text="{projects%}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>May}"/>
+												<uitable:template>
+													<Text text="{projects}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em">
+												<Label text="{i18n>June%}"/>
+												<uitable:template>
+													<Text text="{tasks%}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>July}"/>
+												<uitable:template>
+													<Text text="{tasks}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>August}"/>
+												<uitable:template>
+													<Text text="{totalSavings}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>August}"/>
+												<uitable:template>
+													<Text text="{totalSavings}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>October}"/>
+												<uitable:template>
+													<Text text="{totalSavings}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>November}"/>
+												<uitable:template>
+													<Text text="{totalSavings}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>December}"/>
+												<uitable:template>
+													<Text text="{totalSavings}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+										</uitable:columns>
+									</uitable:Table>
+								</ScrollContainer>
 							</ScrollContainer>
 						</pages>
 					</NavContainer>

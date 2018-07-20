@@ -21,6 +21,9 @@ sap.ui.define([
 			var oJSONModel = this.initSampleDataModel();
 			this.getView().setModel(oJSONModel, "forecastModel");
 			this._oGlobalFilter = null;
+			var oSegmentModel = new JSONModel();
+			oSegmentModel.loadData("model/localData.json");
+			this.getView().setModel(oSegmentModel, "oSegmentModel");
 		},
 		onVendorLinkPress: function (oEvent) {
 			var oVenNum = oEvent.getSource().getProperty("text");
@@ -89,31 +92,6 @@ sap.ui.define([
 			this._filter();
 		},
 
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf incture.forecast.forecasting.view.Forecast
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf incture.forecast.forecasting.view.Forecast
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf incture.forecast.forecasting.view.Forecast
-		 */
-		//	onExit: function() {
-		//
-		//	}
 		onSideNavButtonPress: function () {
 			var viewId = this.getView().getId();
 			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
@@ -135,7 +113,7 @@ sap.ui.define([
 					modData = oModel.getData();
 				oModel.setProperty("/oRows", modData.Forecasting.slice(0, 10));
 				oTab.bindRows("forecastModel>/oRows");
-				oTab.setVisible(true);
+				// oTab.setVisible(true);
 				var len = modData.Forecasting.length;
 				var oActual = len / 10;
 				var oCalculation = (oActual % 1 == 0);
@@ -148,13 +126,28 @@ sap.ui.define([
 				this.getView().byId("forecastPaginator").setNumberOfPages(oValue);
 
 				this.getView().byId("pageHeadingId").setText("Forecasting");
-			} else if (oSelKey === "BGS") {
-				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
-				this.getView().byId("pageHeadingId").setText("Budgeting(Savings)");
 			} else if (oSelKey === "BGNS") {
 				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
 				this.getView().byId("pageHeadingId").setText("Budgeting(NON-Savings)");
+				this.getView().byId("NonSavingsTableId").setVisible(true);
+			} else if (oSelKey === "BGS") {
+				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
+				this.getView().byId("pageHeadingId").setText("Budgeting(Savings)");
+				this.getView().byId("SavingsTableId").setVisible(true);
+				this.getView().byId("SecondSavingsTableId").setVisible(false);
 			}
+		},
+		//on press of savings first screen table 
+		onSavingsRow: function (oEvent) {
+			//this.getOwnerComponent().getRouter().navTo("savingsDescription");
+			var tableid = this.getView().byId("SecondSavingsTableId");
+			tableid.setVisible(true);
+			this.getView().byId("SavingsTableId").setVisible(false);
+
+		},
+		//on press of savings second screen segmented button 
+		onSavingsSegButton: function (oEvent) {
+
 		},
 		// onSelectionChange: function(oEvent) {
 		// 	// this.getOwnerComponent().getRouter().navTo("detail");

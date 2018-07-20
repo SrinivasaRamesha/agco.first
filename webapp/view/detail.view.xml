@@ -94,7 +94,7 @@
 									<Label text="Parts"/>
 								</Toolbar>
 							</headerToolbar>
-							<DisplayListItem type="Navigation" highlight="Information" label="{partsModel>parts}" value="{partsModel>partName}"></DisplayListItem>
+							<DisplayListItem type="Navigation" highlight="Information" press="onPartSelection" label="{partsModel>parts}" value="{partsModel>partName}"></DisplayListItem>
 						</List>
 						<Table headerText="Forecast" id="vendorLevelTabIdSec">
 							<columns>

@@ -23,6 +23,14 @@ sap.ui.define([
 		onBackPress: function () {
 			this.getOwnerComponent().getRouter().navTo("RouteMain");
 		},
+		onPartSelection: function (oEvent) {
+			var oDialog = new sap.ui.xmlfragment("incture.forecast.forecasting.view.projectDetails", this);
+			this.getView().addDependent(oDialog);
+			oDialog.open();
+		},
+		onClosePress: function () {
+
+		},
 		_onObjectMatched: function (oEvent) {
 			var vendorNum = oEvent.getParameter("arguments").vendornumber;
 			var vendorName = oEvent.getParameter("arguments").vendorname;

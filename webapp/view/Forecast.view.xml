@@ -220,8 +220,8 @@
 								<com:Paginator page="onPageSelectionNonSavings" id="budgNonSavingsPaginator"></com:Paginator>
 							</ScrollContainer>
 							<ScrollContainer id="BGS" horizontal="false" vertical="true" height="100%">
-								<uitable:Table rows="{/BSavings}" selectionMode="Single" rowSelectionChange="onSavingsRow" selectionBehavior="Row" visibleRowCount="6"
-									class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false" id="SavingsTableId">
+								<uitable:Table rows="{forecastModel>/BSavings}" selectionMode="Single" rowSelectionChange="onSavingsRow" selectionBehavior="Row"
+									visibleRowCount="6" class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false" id="SavingsTableId">
 									<uitable:extension>
 										<Bar class="barHeader">
 											<contentLeft>
@@ -236,49 +236,49 @@
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>factory}"/>
 											<uitable:template>
-												<Text text="{factory}"/>
+												<Text text="{forecastModel>factory}"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>commDirectory}"/>
 											<uitable:template>
-												<Text text="{commDirectory}"/>
+												<Text text="{forecastModel>commDirectory}"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>stdSpend}"/>
 											<uitable:template>
-												<Text text="{stdSpend}" maxLines="1"/>
+												<Text text="{forecastModel>stdSpend}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>projects%}"/>
 											<uitable:template>
-												<Text text="{projects%}" maxLines="1"/>
+												<Text text="{forecastModel>projects%}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>projects}"/>
 											<uitable:template>
-												<Text text="{projects}" maxLines="1"/>
+												<Text text="{forecastModel>projects}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em">
 											<Label text="{i18n>tasks%}"/>
 											<uitable:template>
-												<Text text="{tasks%}" maxLines="1"/>
+												<Text text="{forecastModel>tasks%}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>tasks}"/>
 											<uitable:template>
-												<Text text="{tasks}" maxLines="1"/>
+												<Text text="{forecastModel>tasks}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>totalSavings}"/>
 											<uitable:template>
-												<Text text="{totalSavings}" maxLines="1"/>
+												<Text text="{forecastModel>totalSavings}" maxLines="1"/>
 											</uitable:template>
 										</uitable:Column>
 									</uitable:columns>

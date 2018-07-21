@@ -25,7 +25,7 @@
 					<NavContainer id="pageContainer">
 						<pages>
 							<ScrollContainer id="FC" horizontal="false" vertical="false" height="100%">
-								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="true" id="ForecastTableId" visibleRowCount="10">
+								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="ForecastTableId" visibleRowCount="10">
 									<uitable:extension>
 										<Bar class="barHeader">
 											<contentLeft>

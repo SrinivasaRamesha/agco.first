@@ -1,7 +1,158 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<Dialog title="Price Movement Analytics">
-		<endButton>
-			<Button text="Close" press="onClosePress"/>
+<core:FragmentDefinition xmlns="sap.m" xmlns:lay="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="Price Movement Analytics" contentWidth="100%" contentHeight="100%">
+		<content>
+			<IconTabBar>
+				<items>
+					<IconTabFilter text="Project">
+						<lay:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+							singleContainerFullSize="false">
+							<lay:content>
+								<Label text="Part ID"/><Text text="AGCO PART 21"/>
+								<Label text="Part Name"/><Text text="PRT ABC"/>
+							</lay:content>
+						</lay:SimpleForm>
+						<List items="{partsModel>/100250}">
+							<CustomListItem>
+								<Panel headerText="{partsModel>parts}" expandable="true">
+									<Table>
+										<headerToolbar>
+											<Toolbar>
+												<Label text="Project Name: "/><Text text="AGCO PRJ1"/>
+												<Label text="New Supplier Price Factory Currency: "/><Text text="$ 1.50"/>
+												<Label text="Fiscal Savings Start: "/><Text text="8/1/2018"/>
+											</Toolbar>
+										</headerToolbar>
+										<columns>
+											<Column>
+												<Label text="Month"/>
+											</Column>
+											<Column>
+												<Label text="Jan"/>
+											</Column>
+											<Column>
+												<Label text="Feb"/>
+											</Column>
+											<Column>
+												<Label text="Mar"/>
+											</Column>
+											<Column>
+												<Label text="Apr"/>
+											</Column>
+											<Column>
+												<Label text="May"/>
+											</Column>
+											<Column>
+												<Label text="Jun"/>
+											</Column>
+											<Column>
+												<Label text="Jul"/>
+											</Column>
+											<Column>
+												<Label text="Aug"/>
+											</Column>
+											<Column>
+												<Label text="Sep"/>
+											</Column>
+											<Column>
+												<Label text="Oct"/>
+											</Column>
+											<Column>
+												<Label text="Nov"/>
+											</Column>
+											<Column>
+												<Label text="Dec"/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<Label text="Price$"/><Label text="10"/><Label text="11"/><Label text="112"/><Label text="5"/>
+												<Label text="89"/><Label text="334"/><Label text="88"/><Label text="8"/><Label text="7"/>
+												<Label text="12334"/><Label text="456"/><Label text="768"/>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</Panel>
+							</CustomListItem>
+						</List>
+					</IconTabFilter><IconTabSeparator/>
+					<IconTabFilter text="PCA">
+						<lay:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+							singleContainerFullSize="false">
+							<lay:content>
+								<Label text="Part ID"/><Text text="AGCO PART 21"/>
+								<Label text="Part Name"/><Text text="PRT ABC"/>
+							</lay:content>
+						</lay:SimpleForm>
+						<List items="{partsModel>/100250}">
+							<CustomListItem>
+								<Panel headerText="PCA No.1" expandable="true">
+									<Table>
+										<headerToolbar>
+											<Toolbar>
+												<Label text="PCA BreakUp"/>
+											</Toolbar>
+										</headerToolbar>
+										<columns>
+											<Column>
+												<Label text="Month"/>
+											</Column>
+											<Column>
+												<Label text="Jan"/>
+											</Column>
+											<Column>
+												<Label text="Feb"/>
+											</Column>
+											<Column>
+												<Label text="Mar"/>
+											</Column>
+											<Column>
+												<Label text="Apr"/>
+											</Column>
+											<Column>
+												<Label text="May"/>
+											</Column>
+											<Column>
+												<Label text="Jun"/>
+											</Column>
+											<Column>
+												<Label text="Jul"/>
+											</Column>
+											<Column>
+												<Label text="Aug"/>
+											</Column>
+											<Column>
+												<Label text="Sep"/>
+											</Column>
+											<Column>
+												<Label text="Oct"/>
+											</Column>
+											<Column>
+												<Label text="Nov"/>
+											</Column>
+											<Column>
+												<Label text="Dec"/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<Label text="Price$"/><Label text="10"/><Label text="11"/><Label text="112"/><Label text="5"/>
+												<Label text="89"/><Label text="334"/><Label text="88"/><Label text="8"/><Label text="7"/>
+												<Label text="12334"/><Label text="456"/><Label text="768"/>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</Panel>
+							</CustomListItem>
+						</List>
+					</IconTabFilter><IconTabSeparator/>
+					<IconTabFilter text="Raw Material Content Movement"></IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<endButton class="endButtonBack">
+			<Button text="Close" press="onClosePress" type="Reject"/>
 		</endButton>
 		<content></content>
 	</Dialog>

@@ -24,6 +24,22 @@ sap.ui.define([
 			var oSegmentModel = new JSONModel();
 			oSegmentModel.loadData("model/localData.json");
 			this.getView().setModel(oSegmentModel, "oSegmentModel");
+
+			// var oModel = this.getView().getModel("forecastModel"),
+			// 	modData = oModel.getData(),
+			// 	oTab = this.getView().byId("ForecastTableId");
+			// oModel.setProperty("/oRows", modData.Forecasting.slice(0, 10));
+			// oTab.bindRows("forecastModel>/oRows");
+			// // oTab.setVisible(true);
+			// var len = modData.Forecasting.length;
+			// var oActual = len / 10;
+			// var oCalculation = (oActual % 1 == 0);
+			// if (oCalculation == true) {
+			// 	var oValue = oActual;
+			// } else {
+			// 	var oValue = parseInt(oActual) + 1;
+			// }
+
 		},
 		onVendorLinkPress: function (oEvent) {
 			var oVenNum = oEvent.getSource().getProperty("text");
@@ -122,7 +138,7 @@ sap.ui.define([
 				} else {
 					var oValue = parseInt(oActual) + 1;
 				}
-
+				oTab.setVisible(true);
 				this.getView().byId("forecastPaginator").setNumberOfPages(oValue);
 
 				this.getView().byId("pageHeadingId").setText("Forecasting");

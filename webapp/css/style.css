@@ -22,6 +22,10 @@
     background-color: #AE132A !important;
 }
 
+.pageBackGround {
+    background-color: white;
+}
+
 .sapContrast.sapTntToolHeader.sapMTB {
     background-color: white !important;
     border: 1px solid white !important;
@@ -80,6 +84,14 @@
     overflow: hidden;
     white-space: nowrap;
     cursor: text;
+}
+
+
+/*Dialog box end button color*/
+
+.endButtonBack {
+    background-color: #AE132A !important;
+    color: #AE132A !important;
 }
 
 

@@ -24,12 +24,19 @@ sap.ui.define([
 			this.getOwnerComponent().getRouter().navTo("RouteMain");
 		},
 		onPartSelection: function (oEvent) {
-			var oDialog = new sap.ui.xmlfragment("incture.forecast.forecasting.view.projectDetails", this);
-			this.getView().addDependent(oDialog);
+			var oDialog = this._getPartsDialog();
 			oDialog.open();
 		},
+		_getPartsDialog: function () {
+			if (!this._oPartDia) {
+				this._oPartDia = new sap.ui.xmlfragment("incture.forecast.forecasting.view.projectDetails", this);
+				this.getView().addDependent(this._oPartDia);
+			}
+			return this._oPartDia;
+		},
 		onClosePress: function () {
-
+			var oDialog = this._getPartsDialog();
+			oDialog.close();
 		},
 		_onObjectMatched: function (oEvent) {
 			var vendorNum = oEvent.getParameter("arguments").vendornumber;

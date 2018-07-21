@@ -1,9 +1,9 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout"
 	xmlns:dat="sap.ui.model.type" controllerName="incture.forecast.forecasting.controller.detail" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:lay="sap.ui.layout.form">
-	<Page showHeader="true">
-		<customHeader>
-			<Toolbar>
+	<Page showHeader="true" class="pageBackGround">
+		<customHeader class="listBackgroundColor">
+			<Toolbar class="listBackgroundColor">
 				<Button icon="sap-icon://nav-back" press="onBackPress" tooltip="Navigate to previous screen"/>
 				<Label text="Vendor Number"/>
 				<Text id="vendorPageNumId"/>
@@ -11,7 +11,7 @@
 			</Toolbar>
 		</customHeader>
 		<content>
-			<Panel expanded="true" headerText="Vendor Forecast">
+			<Panel expanded="true" headerText="Vendor Forecast" class="listBackgroundColor">
 				<content>
 					<Table id="vendorLevelTabId">
 						<columns>
@@ -85,7 +85,7 @@
 					</Table>
 				</content>
 			</Panel>
-			<Panel expandable="true" expanded="false" headerText="Parts Forecast" class="sapUiResponsiveMargin">
+			<Panel expandable="true" expanded="false" headerText="Parts Forecast" class="sapUiResponsiveMargin listBackgroundColor">
 				<content>
 					<FlexBox>
 						<List items="{partsModel>/100250}">

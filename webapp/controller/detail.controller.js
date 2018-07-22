@@ -1,7 +1,8 @@
 sap.ui.define([
 	"incture/forecast/forecasting/controller/baseController",
-	"sap/ui/model/json/JSONModel"
-], function (baseController, JSONModel, smartfield) {
+	"sap/ui/model/json/JSONModel",
+	"incture/forecast/forecasting/formatter/formatter"
+], function (baseController, JSONModel, smartfield, formatter) {
 	"use strict";
 
 	return baseController.extend("incture.forecast.forecasting.controller.detail", {
@@ -11,18 +12,17 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf incture.forecast.forecasting.view.detail
 		 */
+		formatter: formatter,
 		onInit: function () {
-			// this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
-			// this.getOwnerComponent().getRouter().getRoute("detail").attachPatternMatched(function (oEvent) {
-			// 	var vendorNum = oEvent.getParameter("arguments").vendornumber;
-			// 	var sFinalPath = "vendorModel>/VendorNumber/" + vendorNum;
-			// });
+			//  Navigating from forecast controller main page to vendor data page
 			this.getRouter().getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 
 		},
+		//Navigating to previous page
 		onBackPress: function () {
 			this.getOwnerComponent().getRouter().navTo("RouteMain");
 		},
+		//Navigate based on parts selection fragment open
 		onPartSelection: function (oEvent) {
 			var oDialog = this._getPartsDialog();
 			oDialog.open();
@@ -34,6 +34,7 @@ sap.ui.define([
 			}
 			return this._oPartDia;
 		},
+		//Fragment closing action
 		onClosePress: function () {
 			var oDialog = this._getPartsDialog();
 			oDialog.close();
@@ -104,32 +105,6 @@ sap.ui.define([
 			oVendorTab2.bindItems(oFinalPath, oTemplate);
 
 		}
-
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf incture.forecast.forecasting.view.detail
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf incture.forecast.forecasting.view.detail
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf incture.forecast.forecasting.view.detail
-		 */
-		//	onExit: function() {
-		//
-		//	}
 
 	});
 

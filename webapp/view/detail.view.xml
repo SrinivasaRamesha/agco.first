@@ -5,13 +5,13 @@
 		<customHeader class="listBackgroundColor">
 			<Toolbar class="listBackgroundColor">
 				<Button icon="sap-icon://nav-back" press="onBackPress" tooltip="Navigate to previous screen"/>
-				<Label text="Vendor Number"/>
+				<Label text="{i18n>vendorNumber}" class="lableTextColor"/>
 				<Text id="vendorPageNumId"/>
-				<Label text="Vendor Name"/><Text id="vendorPageNameId"/><Label text="Date"/>
+				<Label text="{i18n>vendorName}" class="lableTextColor"/><Text id="vendorPageNameId"/><Label text="{i18n>currDate}" class="lableTextColor"/>
 			</Toolbar>
 		</customHeader>
 		<content>
-			<Panel expanded="true" headerText="Vendor Forecast" class="listBackgroundColor">
+			<Panel expanded="true" headerText="{i18n>vendorPanelHeader}" class="listBackgroundColor lableTextColor">
 				<content>
 					<Table id="vendorLevelTabId">
 						<columns>
@@ -22,62 +22,62 @@
 							</Column>
 							<Column>
 								<header>
-									<Label text="January"/>
+									<Label text="{i18n>January}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="February"/>
+									<Label text="{i18n>February}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="March"/>
+									<Label text="{i18n>March}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="April"/>
+									<Label text="{i18n>April}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="May"/>
+									<Label text="{i18n>May}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="June"/>
+									<Label text="{i18n>June}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="July"/>
+									<Label text="{i18n>July}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="August"/>
+									<Label text="{i18n>August}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="September"/>
+									<Label text="{i18n>September}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="October"/>
+									<Label text="{i18n>October}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="November"/>
+									<Label text="{i18n>November}"/>
 								</header>
 							</Column>
 							<Column>
 								<header>
-									<Label text="December"/>
+									<Label text="{i18n>December}"/>
 								</header>
 							</Column>
 						</columns>
@@ -105,62 +105,62 @@
 								</Column>
 								<Column>
 									<header>
-										<Label text="January"/>
+										<Label text="{i18n>January}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="February"/>
+										<Label text="{i18n>February}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="March"/>
+										<Label text="{i18n>March}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="April"/>
+										<Label text="{i18n>April}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="May"/>
+										<Label text="{i18n>May}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="June"/>
+										<Label text="{i18n>June}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="July"/>
+										<Label text="{i18n>July}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="August"/>
+										<Label text="{i18n>August}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="September"/>
+										<Label text="{i18n>September}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="October"/>
+										<Label text="{i18n>October}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="November"/>
+										<Label text="{i18n>November}"/>
 									</header>
 								</Column>
 								<Column>
 									<header>
-										<Label text="December"/>
+										<Label text="{i18n>December}"/>
 									</header>
 								</Column>
 							</columns>
@@ -173,7 +173,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-					<Button text="back" press="onBackPress"/>
+					<Button text="{i18n>backButText}" press="onBackPress" tooltip="{i18n>backToolTip}"/>
 				</contentRight>
 			</Bar>
 		</footer>

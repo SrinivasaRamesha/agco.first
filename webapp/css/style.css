@@ -36,6 +36,13 @@
 }
 
 
+/*lable font and color*/
+
+.lableTextColor {
+    color: black;
+}
+
+
 /*download to excel button*/
 
 .downloadButtonClass .sapMBtnInner {

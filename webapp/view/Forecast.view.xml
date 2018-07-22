@@ -8,7 +8,7 @@
 					<tnt:ToolHeader>
 						<Image src="images/download.png" width="180px" height="100px"/>
 						<Button icon="sap-icon://menu2" id="toggleButtonId" press="onSideNavButtonPress"/>
-						<Label text="" id="pageHeadingId"/>
+						<Label id="pageHeadingId"/>
 						<ToolbarSpacer/>
 						<Label text="User Name" id="userNameId"/>
 						<core:Icon src="sap-icon://customer" press="onProfile" class="appHdr-Icon"/>
@@ -95,57 +95,6 @@
 									</uitable:columns>
 								</uitable:Table>
 								<com:Paginator page="onPageSelection" id="forecastPaginator"></com:Paginator>
-								<!--			<Table id="ForecastTableId" items="{/Forecasting}" visible="false" growing="true" growingThreshold="8" mode="SingleSelectMaster" selectionChange="onSelectionChange">-->
-								<!--	<headerToolbar>-->
-								<!--		<Toolbar>-->
-								<!--			<content>-->
-								<!--				<SearchField width="40%"/>-->
-								<!--				<ToolbarSpacer/>-->
-								<!--				<Button icon="sap-icon://arrow-bottom" text="Download to Excel" iconFirst="true" press="onDataExport"/>-->
-								<!--			</content>-->
-								<!--		</Toolbar>-->
-								<!--	</headerToolbar>-->
-								<!--	<columns>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNFA}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNPN}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNVN}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNVNA}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNCQ}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNTS}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNPPVBU}"/>-->
-								<!--		</Column>-->
-								<!--		<Column>-->
-								<!--			<Label text="{i18n>CNPPVFO}"/>-->
-								<!--		</Column>-->
-								<!--	</columns>-->
-								<!--	<items>-->
-								<!--		<ColumnListItem>-->
-								<!--			<cells>-->
-								<!--				<Text text="{Factory}"/>-->
-								<!--				<Text text="{ParentNumber}"/>-->
-								<!--				<Text text="{VendorNumber}"/>-->
-								<!--				<Text text="{VendorName}"/>-->
-								<!--				<Text text="{CurrentQuote}"/>-->
-								<!--				<Text text="{TotalStandard}"/>-->
-								<!--				<Text text="{TotalPPVBudget}"/>-->
-								<!--				<Text text="{TotalPPVForecast}"/>-->
-								<!--			</cells>-->
-								<!--		</ColumnListItem>-->
-								<!--	</items>-->
-								<!--</Table>-->
 							</ScrollContainer>
 							<ScrollContainer id="BGNS" horizontal="false" vertical="true" height="100%">
 								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="NonSavingsTableId" visibleRowCount="10">
@@ -333,7 +282,7 @@
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em">
-												<Label text="{i18n>June%}"/>
+												<Label text="{i18n>June}"/>
 												<uitable:template>
 													<Text text="{tasks%}" maxLines="1"/>
 												</uitable:template>

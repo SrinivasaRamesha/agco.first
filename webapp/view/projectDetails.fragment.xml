@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:lay="sap.ui.layout.form" xmlns:core="sap.ui.core">
-	<Dialog title="Price Movement Analytics" contentWidth="100%" contentHeight="100%">
+	<Dialog title="{i18n>fragmentTitle}" contentWidth="100%" contentHeight="100%">
 		<content>
 			<IconTabBar>
 				<items>
@@ -14,7 +14,13 @@
 						</lay:SimpleForm>
 						<List items="{partsModel>/100250}">
 							<CustomListItem>
-								<Panel headerText="{partsModel>parts}" expandable="true">
+								<Panel expandable="true">
+									<headerToolbar>
+										<Toolbar>
+											<Label text="{partsModel>parts}"/>
+											<ObjectStatus text="{partsModel>status}" state="Success"></ObjectStatus>
+										</Toolbar>
+									</headerToolbar>
 									<Table>
 										<headerToolbar>
 											<Toolbar>

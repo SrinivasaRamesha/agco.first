@@ -1,21 +1,27 @@
 {
 	"100250": [{
 		"parts": "part1",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "Completed"
 	}, {
 		"parts": "part2",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "In Approval"
 	}, {
 		"parts": "part3",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "Negotiating"
 	}, {
 		"parts": "part4",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "Completed"
 	}, {
 		"parts": "part5",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "In Approval"
 	}, {
 		"parts": "part6",
-		"partName": "Part Name"
+		"partName": "Part Name",
+		"status": "Negotiating"
 	}]
 }

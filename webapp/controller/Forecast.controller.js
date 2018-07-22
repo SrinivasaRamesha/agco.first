@@ -18,13 +18,17 @@ sap.ui.define([
 		 */
 		formatter: formatter,
 		onInit: function () {
+			//Forecast model initialization and set at view level
 			var oJSONModel = this.initSampleDataModel();
 			this.getView().setModel(oJSONModel, "forecastModel");
 			this._oGlobalFilter = null;
+
+			//Forecast model initiaalization can be deleted later
 			var oSegmentModel = new JSONModel();
 			oSegmentModel.loadData("model/localData.json");
 			this.getView().setModel(oSegmentModel, "oSegmentModel");
 
+			//Can be used for Pagination --- still need to work on that
 			// var oModel = this.getView().getModel("forecastModel"),
 			// 	modData = oModel.getData(),
 			// 	oTab = this.getView().byId("ForecastTableId");
@@ -41,6 +45,7 @@ sap.ui.define([
 			// }
 
 		},
+		//Navigating to detail view on link press
 		onVendorLinkPress: function (oEvent) {
 			var oVenNum = oEvent.getSource().getProperty("text");
 			var mainPath = oEvent.getSource().getBindingInfo("text").binding.getContext().getPath();
@@ -50,6 +55,7 @@ sap.ui.define([
 				vendorname: oVenName
 			});
 		},
+		//Filter operation for forecast model
 		initSampleDataModel: function () {
 			var oModel = new JSONModel();
 
@@ -74,15 +80,9 @@ sap.ui.define([
 								Name: oProduct.VendorName
 							});
 						}
-						// oProduct.DeliveryDate = (new Date()).getTime() - (i % 10 * 4 * 24 * 60 * 60 * 1000);
-						// oProduct.DeliveryDateStr = oDateFormat.format(new Date(oProduct.DeliveryDate));
-						// oProduct.Heavy = oProduct.WeightMeasure > 1000 ? "true" : "false";
-						// oProduct.Available = oProduct.Status == "Available" ? true : false;
 					}
-
 					oData.Factory = aFactory;
 					oData.VendorName = aVendorName;
-
 					oModel.setData(oData);
 				},
 				error: function () {
@@ -107,7 +107,7 @@ sap.ui.define([
 
 			this._filter();
 		},
-
+		//ToolPage master screen hiding functionality
 		onSideNavButtonPress: function () {
 			var viewId = this.getView().getId();
 			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
@@ -117,6 +117,7 @@ sap.ui.define([
 
 			toolPage.setSideExpanded(!toolPage.getSideExpanded());
 		},
+		//ToolPage detail section data loading on Selection
 		onItemSelect: function (oEvent) {
 			var item = oEvent.getParameter('item');
 			var viewId = this.getView().getId();
@@ -165,15 +166,7 @@ sap.ui.define([
 		onSavingsSegButton: function (oEvent) {
 
 		},
-		// onSelectionChange: function(oEvent) {
-		// 	// this.getOwnerComponent().getRouter().navTo("detail");
-		// 	var oIndex = oEvent.getParameter("rowIndex"),
-		// 		oVal = this.getView().getModel("forecastModel").getProperty("/oRows/2").VendorName;
-
-		// 	this.getOwnerComponent().getRouter().navTo("detail", {
-		// 		vendorname: oVal
-		// 	});
-		// },
+		//Downloading the data to excel
 		onDataExport: sap.m.Table.prototype.exportData || function (oEvent) {
 			var oExport = new Export({
 
@@ -212,7 +205,6 @@ sap.ui.define([
 					name: "Vendor Name",
 					template: {
 						content: "{VendorName}"
-							// "{Width} x {Depth} x {Height} {DimUnit}"
 					}
 				}, {
 					name: "Current Quote",
@@ -244,15 +236,7 @@ sap.ui.define([
 				oExport.destroy();
 			});
 		},
-		onItemsSelectionChange: function (oEvent) {
-			// var oIndex = oEvent.getParameter("rowIndex");
-			// var oPath = "/oRows/" + oIndex;
-			// var oVal = this.getView().getModel("forecastModel").getProperty(oPath).VendorNumber;
-
-			// this.getOwnerComponent().getRouter().navTo("detail", {
-			// 	vendornumber: oVal
-			// });
-		},
+		//Pagination function
 		onPageSelection: function (oEvent) {
 			var oTargetPage = oEvent.getParameter("targetPage");
 			var oTargetValue = oTargetPage * 10;

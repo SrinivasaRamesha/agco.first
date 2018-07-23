@@ -173,7 +173,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-					<Button text="{i18n>backButText}" press="onBackPress" tooltip="{i18n>backToolTip}"/>
+					<Button text="{i18n>backButText}" press="onBackPress" tooltip="{i18n>backButToolTip}"/>
 				</contentRight>
 			</Bar>
 		</footer>

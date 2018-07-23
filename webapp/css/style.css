@@ -101,6 +101,10 @@
     color: #AE132A !important;
 }
 
+.inputNoBorder {
+    border: hidden;
+}
+
 
 /*for the title bar*/
 

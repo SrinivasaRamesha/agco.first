@@ -1,7 +1,7 @@
 sap.ui.define([
 	"incture/forecast/forecasting/controller/baseController",
 	"sap/ui/model/json/JSONModel",
-	"incture/forecast/forecasting/formatter/formatter"
+	"incture/forecast/forecasting/model/formatter"
 ], function (baseController, JSONModel, smartfield, formatter) {
 	"use strict";
 
@@ -12,6 +12,15 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf incture.forecast.forecasting.view.detail
 		 */
+		partState: function (oStatus) {
+			if (oStatus === "Completed") {
+				return "Success";
+			} else if (oStatus === "In Approval") {
+				return "Warning";
+			} else if (oStatus === "Negotiating") {
+				return "Error";
+			}
+		},
 		formatter: formatter,
 		onInit: function () {
 			//  Navigating from forecast controller main page to vendor data page
@@ -26,6 +35,9 @@ sap.ui.define([
 		onPartSelection: function (oEvent) {
 			var oDialog = this._getPartsDialog();
 			oDialog.open();
+			// var oDialog = new sap.ui.xmlfragment("incture.forecast.forecasting.view.projectDetails", this);
+			// this.getView().addDependent(oDialog);
+			// oDialog.open();
 		},
 		_getPartsDialog: function () {
 			if (!this._oPartDia) {
@@ -52,7 +64,7 @@ sap.ui.define([
 					new sap.m.Input({
 						value: "{vendorModel>Jan}",
 						editable: false
-					}),
+					}).addStyleClass("inputNoBorder"),
 					new sap.m.Input({
 						value: "{vendorModel>Feb}",
 						editable: false

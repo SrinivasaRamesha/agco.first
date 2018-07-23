@@ -93,8 +93,10 @@
 											</uitable:template>
 										</uitable:Column>
 									</uitable:columns>
+									<uitable:footer>
+										<com:Paginator page="onPageSelection" id="forecastPaginator"></com:Paginator>
+									</uitable:footer>
 								</uitable:Table>
-								<com:Paginator page="onPageSelection" id="forecastPaginator"></com:Paginator>
 							</ScrollContainer>
 							<ScrollContainer id="BGNS" horizontal="false" vertical="true" height="100%">
 								<uitable:Table rows="{forecastModel>/Forecasting}" selectionMode="Single" visible="false" id="NonSavingsTableId" visibleRowCount="10">

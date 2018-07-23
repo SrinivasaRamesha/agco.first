@@ -5,7 +5,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"incture/forecast/forecasting/formatter/formatter"
+	"incture/forecast/forecasting/model/formatter"
 ], function (baseController, Export, ExportTypeCSV, JSONModel, Filter, FilterOperator, formatter) {
 	"use strict";
 

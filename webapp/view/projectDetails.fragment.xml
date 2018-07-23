@@ -18,7 +18,7 @@
 									<headerToolbar>
 										<Toolbar>
 											<Label text="{partsModel>parts}"/>
-											<ObjectStatus text="{partsModel>status}" state="Success"></ObjectStatus>
+											<ObjectStatus text="{path:'partsModel>status'}" state="{path:'partsModel>status',formatter:'.partState'}"></ObjectStatus>
 										</Toolbar>
 									</headerToolbar>
 									<Table>

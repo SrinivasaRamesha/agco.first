@@ -1,0 +1,136 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
+	<Dialog title="Project Summary">
+		<IconTabBar items="{mItemDetails>/items}" select="onIconBarSelect" class="zpIcnTabFilterClass sapUiMediumMarginBegin sapUiMediumMarginEnd">
+			<items>
+				<IconTabFilter >
+					<Label text="Projects"></Label>
+				</IconTabFilter>
+			</items>
+			<content>
+				<VBox width="100%" class="sapUiMediumMarginBottom">
+					<Label text="AGCO PRT21"/>
+					<Text width="90%" class="inputLineClass" text="PART ID"/>
+				</VBox>
+				<VBox width="100%" class="sapUiMediumMarginBottom">
+					<Label text="PRT ABC"/>
+					<Text width="90%" class="inputLineClass" text="PART NAME"/>
+				</VBox>
+				<!--<Panel width="auto" class="sapUiResponsiveMargin header2line header2Class" accessibleRole="Region" expandable="true">-->
+				<!--	<headerToolbar class="headerClass">-->
+				<!--		<Toolbar height="3rem">-->
+				<!--			<Title text="AGCO" class="columnLabel"/>-->
+				<!--			<CheckBox text="completed"></CheckBox>-->
+				<!--		</Toolbar>-->
+				<!--	</headerToolbar>-->
+				<!--	<l:Grid defaultSpan="L12 M12 S12" class="sapUiSizeCompact " hSpacing="0" vSpacing="0" width="100%">-->
+				<!--		<l:content>-->
+				<!--			<HBox>-->
+				<!--				<VBox width="100%" class="sapUiMediumMarginBottom">-->
+				<!--					<Label text="AGCO PRT1"/>-->
+				<!--					<Text width="90%" class="inputLineClass" text="Project Name"/>-->
+				<!--				</VBox>-->
+				<!--				<VBox width="100%" class="sapUiMediumMarginBottom">-->
+				<!--					<Label text=" $1.50"/>-->
+				<!--					<Text width="90%" class="inputLineClass" text="New Supplier Price Factory Currency"/>-->
+				<!--				</VBox>-->
+				<!--				<VBox width="100%" class="sapUiMediumMarginBottom">-->
+				<!--					<Label text="8/01/2018"/>-->
+				<!--					<Text width="90%" class="inputLineClass" text="Fiscal Savings Start"/>-->
+				<!--				</VBox>-->
+				<!--			</HBox>-->
+				<!--			<uitable:Table id="SavingsTable2018" rows="{savSecondModel>/calendarData}" selectionMode="Single" rowSelectionChange="onRowSelectionChange2"-->
+				<!--				visibleRowCount="6" class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate">-->
+				<!--				<uitable:extension></uitable:extension>-->
+				<!--				<uitable:columns>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label/>-->
+				<!--						<uitable:template>-->
+				<!--<Text text="{savSecondModel>name}"/>-->
+				<!--							<Link text="{savSecondModel>col1}" press="onSavingsDialog"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>January}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Jan}"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>February}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Feb}"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>March}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Mar}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>April}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>April}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>May}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>May}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em">-->
+				<!--						<Label text="{i18n>June}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Jun}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>July}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>July}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>August}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Aug}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>September}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Sep}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>October}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Oct}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>November}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Nov}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--					<uitable:Column width="11em" resizable="false">-->
+				<!--						<Label text="{i18n>December}"/>-->
+				<!--						<uitable:template>-->
+				<!--							<Text text="{savSecondModel>Dec}" maxLines="1"/>-->
+				<!--						</uitable:template>-->
+				<!--					</uitable:Column>-->
+				<!--				</uitable:columns>-->
+				<!--			</uitable:Table>-->
+				<!--		</l:content>-->
+				<!--	</l:Grid>-->
+				<!--</Panel>-->
+			</content>
+		</IconTabBar>
+		<buttons>
+			<Button type="Accept" text="Cancel" press="onCloseDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

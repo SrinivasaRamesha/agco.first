@@ -171,8 +171,8 @@
 								<com:Paginator page="onPageSelectionNonSavings" id="budgNonSavingsPaginator"></com:Paginator>
 							</ScrollContainer>
 							<ScrollContainer id="BGS" horizontal="false" vertical="true" height="100%">
-								<uitable:Table rows="{forecastModel>/BSavings}" selectionMode="Single" rowSelectionChange="onSavingsRow" selectionBehavior="Row"
-									visibleRowCount="6" class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false" id="SavingsTableId">
+								<uitable:Table rows="{forecastModel>/BSavings}" selectionMode="Single" selectionBehavior="Row" visibleRowCount="6"
+									class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false" id="SavingsTableId">
 									<uitable:extension>
 										<Bar class="barHeader">
 											<contentLeft>
@@ -187,7 +187,8 @@
 										<uitable:Column width="11em" resizable="false">
 											<Label text="{i18n>factory}"/>
 											<uitable:template>
-												<Text text="{forecastModel>factory}"/>
+												<!--<Text text="{forecastModel>factory}"/>-->
+												<Link text="{forecastModel>factory}" press="onSavingsRow"/>
 											</uitable:template>
 										</uitable:Column>
 										<uitable:Column width="11em" resizable="false">
@@ -236,17 +237,30 @@
 								</uitable:Table>
 								<!--Budgeting savings 2nd screen-->
 								<ScrollContainer id="SecondSavingsTableId">
-									<SegmentedButton id="item" selectionChange="onSavingsSegButton" class="downloadButtonClass">
-										<items>
-											<SegmentedButtonItem text="2018" class="downloadButtonClass" id="seg2018Savings"/>
-											<SegmentedButtonItem text="2019" class="downloadButtonClass" id="seg2019Savings"/>
-										</items>
-									</SegmentedButton>
-									<uitable:Table rows="{oSegmentModel>/BSavings}" selectionMode="Single" rowSelectionChange="onItemsSelectionChange" visibleRowCount="3"
-										class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate">
+									<Bar>
+										<contentLeft>
+											<Label text="OVERVIEW"></Label>
+										</contentLeft>
+										<contentRight>
+											<SegmentedButton id="item" selectionChange="onSavingsSegButton" class="downloadButtonClass">
+												<items>
+													<SegmentedButtonItem text="2018" key="18" class="downloadButtonClass" id="seg2018Savings"/>
+													<SegmentedButtonItem text="2019" key="19" class="downloadButtonClass" id="seg2019Savings"/>
+												</items>
+											</SegmentedButton>
+										</contentRight>
+									</Bar>
+									<uitable:Table id="SavingsTable2018" rows="{savSecondModel>/calendarData}" selectionMode="Single" rowSelectionChange="onRowSelectionChange2"
+										visibleRowCount="6" class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate">
 										<uitable:extension>
 											<Bar class="barHeader">
-												<contentLeft></contentLeft>
+												<contentLeft>
+													<Label text="Factory :"></Label>
+													<Text text="GSI"></Text>
+													<Label></Label>
+													<Label text="Commodity Directory :"></Label>
+													<Text text="105714"></Text>
+												</contentLeft>
 												<contentRight>
 													<Button icon="sap-icon://arrow-bottom" text="Download to Excel" class="downloadButtonClass" iconFirst="true" press="onDataExport"/>
 												</contentRight>
@@ -254,75 +268,182 @@
 										</uitable:extension>
 										<uitable:columns>
 											<uitable:Column width="11em" resizable="false">
+												<Label/>
+												<uitable:template>
+													<!--<Text text="{savSecondModel>name}"/>-->
+													<Link text="{savSecondModel>name}" press="onSavingsDialog"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>January}"/>
 												<uitable:template>
-													<Text text="{factory}"/>
+													<Text text="{savSecondModel>Jan}"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>February}"/>
 												<uitable:template>
-													<Text text="{commDirectory}"/>
+													<Text text="{savSecondModel>Feb}"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>March}"/>
 												<uitable:template>
-													<Text text="{stdSpend}" maxLines="1"/>
+													<Text text="{savSecondModel>Mar}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>April}"/>
 												<uitable:template>
-													<Text text="{projects%}" maxLines="1"/>
+													<Text text="{savSecondModel>April}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>May}"/>
 												<uitable:template>
-													<Text text="{projects}" maxLines="1"/>
+													<Text text="{savSecondModel>May}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em">
 												<Label text="{i18n>June}"/>
 												<uitable:template>
-													<Text text="{tasks%}" maxLines="1"/>
+													<Text text="{savSecondModel>Jun}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>July}"/>
 												<uitable:template>
-													<Text text="{tasks}" maxLines="1"/>
+													<Text text="{savSecondModel>July}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>August}"/>
 												<uitable:template>
-													<Text text="{totalSavings}" maxLines="1"/>
+													<Text text="{savSecondModel>Aug}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
-												<Label text="{i18n>August}"/>
+												<Label text="{i18n>September}"/>
 												<uitable:template>
-													<Text text="{totalSavings}" maxLines="1"/>
+													<Text text="{savSecondModel>Sep}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>October}"/>
 												<uitable:template>
-													<Text text="{totalSavings}" maxLines="1"/>
+													<Text text="{savSecondModel>Oct}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>November}"/>
 												<uitable:template>
-													<Text text="{totalSavings}" maxLines="1"/>
+													<Text text="{savSecondModel>Nov}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 											<uitable:Column width="11em" resizable="false">
 												<Label text="{i18n>December}"/>
 												<uitable:template>
-													<Text text="{totalSavings}" maxLines="1"/>
+													<Text text="{savSecondModel>Dec}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+										</uitable:columns>
+									</uitable:Table>
+									<!--2019 seg button table-->
+									<uitable:Table id="SavingsTable2019" rows="{savSecondModel>/calendarData}" selectionMode="Single" rowSelectionChange="onRowSelectionChange2"
+										visibleRowCount="6" class="marginBottom sapUiMediumMarginBegin sapUiMediumMarginEnd tableSoCreate" visible="false">
+										<uitable:extension>
+											<Bar class="barHeader">
+												<contentLeft>
+													<Label text="Factory :"></Label>
+													<Text text="GSI"></Text>
+													<Label></Label>
+													<Label text="Commodity Directory :"></Label>
+													<Text text="105714"></Text>
+												</contentLeft>
+												<contentRight>
+													<Button icon="sap-icon://arrow-bottom" text="Download to Excel" class="downloadButtonClass" iconFirst="true" press="onDataExport"/>
+												</contentRight>
+											</Bar>
+										</uitable:extension>
+										<uitable:columns>
+											<uitable:Column width="11em" resizable="false">
+												<Label/>
+												<uitable:template>
+													<!--<Input value="{savSecondModel>name}"/>-->
+													<Link text="{savSecondModel>name}" press="onSavingsDialog"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>January}"/>
+												<uitable:template>
+													<Input value="{savSecondModel>Jan}"/>
+													<!--<Text text="{savSecondModel>Jan}"/>-->
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>February}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Feb}"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>March}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Mar}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>April}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>April}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>May}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>May}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em">
+												<Label text="{i18n>June}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Jun}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>July}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>July}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>August}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Aug}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>September}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Sep}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>October}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Oct}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>November}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Nov}" maxLines="1"/>
+												</uitable:template>
+											</uitable:Column>
+											<uitable:Column width="11em" resizable="false">
+												<Label text="{i18n>December}"/>
+												<uitable:template>
+													<Text text="{savSecondModel>Dec}" maxLines="1"/>
 												</uitable:template>
 											</uitable:Column>
 										</uitable:columns>

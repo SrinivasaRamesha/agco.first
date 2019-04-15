@@ -143,19 +143,25 @@ sap.ui.define([
 				this.getView().byId("forecastPaginator").setNumberOfPages(oValue);
 
 				this.getView().byId("pageHeadingId").setText("Forecasting");
-			} else if (oSelKey === "BGNS") {
-				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
-				this.getView().byId("pageHeadingId").setText("Budgeting(NON-Savings)");
-				this.getView().byId("NonSavingsTableId").setVisible(true);
 			} else if (oSelKey === "BGS") {
 				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
 				this.getView().byId("pageHeadingId").setText("Budgeting(Savings)");
 				this.getView().byId("SavingsTableId").setVisible(true);
 				this.getView().byId("SecondSavingsTableId").setVisible(false);
+			} else if (oSelKey === "BGNS") {
+				sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
+				this.getView().byId("pageHeadingId").setText("Budgeting(NON-Savings)");
+				this.getView().byId("NonSavingsTableId").setVisible(true);
 			}
 		},
 		//on press of savings first screen table 
 		onSavingsRow: function (oEvent) {
+			var oVenNum = oEvent.getSource().getProperty("text");
+			var mainPath = oEvent.getSource().getBindingInfo("text").binding.getContext().getPath();
+			var oVenName = this.getView().getModel("forecastModel").getProperty(mainPath).VendorName;
+			// var oIndex = oEvent.getParameter("rowIndex");
+			// var oPath = "/oRows/" + oIndex;
+			// var oVal = this.getView().getModel("forecastModel").getProperty(oPath).Factory;
 			//this.getOwnerComponent().getRouter().navTo("savingsDescription");
 			var tableid = this.getView().byId("SecondSavingsTableId");
 			tableid.setVisible(true);
@@ -164,8 +170,39 @@ sap.ui.define([
 		},
 		//on press of savings second screen segmented button 
 		onSavingsSegButton: function (oEvent) {
+			var oSel = oEvent.getParameter("item").getText();
+			if (oSel === "2018") {
+				var tableid = this.getView().byId("SavingsTable2018");
+				tableid.setVisible(true);
+				this.getView().byId("SavingsTable2019").setVisible(false);
+			} else if (oSel === "2019") {
+				var tableid = this.getView().byId("SavingsTable2019");
+				tableid.setVisible(true);
+				this.getView().byId("SavingsTable2018").setVisible(false);
+			}
 
 		},
+
+		//on press of projects in savings 2nd screen
+		onSavingsDialog: function (oEvent) {
+
+			this.oFragment = sap.ui.xmlfragment("incture.forecast.forecasting.fragment.dialog", this);
+			this.getView().addDependent(this.oFragment);
+			this.oFragment.open();
+
+		},
+		onCloseDialog: function (oEvent) {
+			this.oFragment.close();
+		},
+		// onSelectionChange: function(oEvent) {
+		// 	// this.getOwnerComponent().getRouter().navTo("detail");
+		// 	var oIndex = oEvent.getParameter("rowIndex"),
+		// 		oVal = this.getView().getModel("forecastModel").getProperty("/oRows/2").VendorName;
+
+		// 	this.getOwnerComponent().getRouter().navTo("detail", {
+		// 		vendorname: oVal
+		// 	});
+		// },
 		//Downloading the data to excel
 		onDataExport: sap.m.Table.prototype.exportData || function (oEvent) {
 			var oExport = new Export({

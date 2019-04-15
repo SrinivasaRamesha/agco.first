@@ -10,17 +10,17 @@
 				"uri": "model/moduleDetails.json",
 				"type": "JSON"
 			},
-			"init_savings_second_table":{
-				"uri":"model/savSecondTable.json",
-				"type":"JSON"
+			"init_savings_second_table": {
+				"uri": "model/savSecondTable.json",
+				"type": "JSON"
 			},
 			"init_vendor_data": {
 				"uri": "model/vendorData.json",
 				"type": "JSON"
 			},
-			"init_parts_data":{
-				"uri":"model/partsData.json",
-				"type":"JSON"
+			"init_parts_data": {
+				"uri": "model/partsData.json",
+				"type": "JSON"
 			}
 		},
 		"id": "incture.forecast.forecasting",
@@ -92,9 +92,9 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "init_parts_data"
 			},
-			"savSecondModel":{
-				"type":"sap.ui.model.json.JSONModel",
-				"dataSource":"init_savings_second_table"
+			"savSecondModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "init_savings_second_table"
 			}
 		},
 		"resources": {
@@ -148,5 +148,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
